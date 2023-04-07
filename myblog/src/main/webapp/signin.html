@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	padding: 20px;
+	color: white;
+	background-color: #333;
+	text-align: center;
+	flex: 1;
+}
+
+footer {
+	padding: 20px;
+	color: #bbb;
+	background-color: #555;
+	text-align: center;
+	flex: 1;
+}
+
+section {
+	background-color: #ccc;
+	flex: 3;
+}
+
+form {
+	display: flex;
+	height: 100%;
+}
+
+.empty-box {
+	flex: 1;
+}
+
+.content-box {
+	flex: 2;
+	background-color: #eee;
+	border: 1px solid black;
+}
+
+.content-box div {
+	padding: 20px;
+	
+	display: flex;
+	justify-content: space-between;
+}
+
+.content-box div :first-child {
+	flex: 1;
+}
+
+.content-box div :last-child {
+	flex: 3;
+}
+
+.login-button{
+	height: 40px;
+	background-color: #ddd;
+}
+
+@media (max-width:768px){
+	.content-box div{
+		flex-direction: column;
+	}
+}
+</style>
+</head>
+<body>
+	<!--
+		1. 요청
+		signin.html 요청을하면 화면을 그리는 담당 
+		form 태그중 method 속성, action 속성에 대해 알아보고 
+		name값과 password값을 보내 수 있는 화면을 구성하시오
+		
+		2. 버튼을 누르면 연산처리를 할 서블릿 객체를 만들어주세요.
+		method 방식 POST
+		서버 콘솔창에 넘겨받은 데이터를 출력
+	 -->
+	<header>
+		<h1>L O G I N</h1>
+	</header>
+
+	<section>
+		<form action="http://localhost:8080/myblog/uc" name="signin"
+			method="post">
+			<div class="empty-box"></div>
+			<div class="content-box">
+				<div>
+					<label>Name</label> <input type="text" name="name">
+				</div>
+				<div>
+					<label>Password</label> <input type="password" name="pwd">
+				</div>
+				<div>
+					<input type="submit" value="login" class = "login-button">
+				</div>
+			</div>
+			<div class="empty-box"></div>
+		</form>
+	</section>
+	<footer>
+		@Copyright is none.<br> email: null@test.com
+	</footer>
+
+</body>
+</html>
